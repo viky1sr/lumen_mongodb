@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Capsule\Manager as Capsule;
+
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -13,6 +16,25 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+//$router->get('/', function () use ($router) {
+//    $capsule = new Capsule;
+//
+//    $capsule->getDatabaseManager()->extend('mongodb', function($config, $name) {
+//        $config['name'] = $name;
+//
+//        return new Jenssegers\Mongodb\Connection($config);
+//    });
+//
+//    $capsule->addConnection([
+//        'driver' => 'mongodb',
+//        'host' => '127.0.0.1',
+//        'database' => 'testing_monggo',
+//        'username' => '',
+//        'password' => '',
+//    ]);
+//    $capsule->setAsGlobal();
+//
+//    return Capsule::table('users')->get();
+//});
+
+$router->get('/', 'ExampleController@detailBills');

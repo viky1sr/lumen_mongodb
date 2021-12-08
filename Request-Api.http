@@ -1,0 +1,48 @@
+#Update user {_id}
+POST http://localhost:8000/api/user/_id
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODkyODc3NSwiZXhwIjoxNjM4OTcxOTc1LCJuYmYiOjE
+
+{
+    "name" : "testing",
+    "email": "kwokwow@land.id"
+}
+
+###
+
+#Crate users
+POST http://localhost:8000/api/register
+Content-Type: application/json
+
+{
+    "name" : "testing",
+    "email": "kedpos@gmail.com",
+    "password": "qweasd123",
+    "password_confirmation": "qweasd123"
+}
+
+###
+
+#Delete user
+DELETE http://localhost:8000/api/user/{_id}
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODkyODc3NSwiZXhwIjoxNjM4OTcxOTc1LCJuYmYiOjE
+###
+
+#Get user by {_id}
+GET http://localhost:8000/api/user/{_id}
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODkyODc3NSwiZXhwIjoxNjM4OTcxOTc1LCJuYmYiOjE
+###
+
+#Get all user
+GET http://localhost:8000/api/users
+Accept: application/json
+
+###
+
+#Logout user
+POST http://localhost:8000/api/auth/logout
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzODkyODc3NSwiZXhwIjoxNjM4OTcxOTc1LCJuYmYiOjE
+###
